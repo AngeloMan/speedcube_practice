@@ -1,20 +1,17 @@
-import { useEffect, useState } from "react";
-import { keyFromEvent } from "../components/TwistyViewer";
-import { ACTIONS, DEFAULT_BINDINGS, useStore } from "../store";
+import { Fragment, useEffect, useState } from "react";
+import { keyFromEvent } from "../lib/keyboard";
+import { ORIENTATIONS } from "../lib/stickering";
+import { ACTIONS, BINDING_MATRIX, DEFAULT_BINDINGS, useStore } from "../store";
 
-const GROUPS = ["Layers", "Slices", "Rotations"];
-
-function BindingRow({ action, boundKey, capturing, onCapture, onClear }) {
+/** One assignable key: click, then press. */
+function KeyCell({ action, boundKey, fallback, capturing, onCapture, onClear, label }) {
   return (
-    <div className="flex items-center gap-3 rounded-lg px-3 py-2 odd:bg-surface-850/60">
-      <div className="min-w-0 flex-1">
-        <div className="truncate text-sm text-zinc-200">{action.label}</div>
-        <div className="font-mono text-[11px] text-zinc-600">{action.note}</div>
-      </div>
+    <div className="flex items-center gap-1">
       <button
         type="button"
-        onClick={() => onCapture(action.id)}
-        className={`min-w-[84px] rounded-lg border px-3 py-1.5 font-mono text-sm uppercase transition ${
+        onClick={() => onCapture(action)}
+        aria-label={`Bind ${label}`}
+        className={`min-w-[76px] flex-1 rounded-lg border px-2 py-1.5 font-mono text-sm uppercase transition ${
           capturing
             ? "animate-pulse border-accent bg-accent/20 text-accent-soft"
             : boundKey
@@ -22,14 +19,14 @@ function BindingRow({ action, boundKey, capturing, onCapture, onClear }) {
               : "border-dashed border-surface-600 text-zinc-600 hover:border-accent"
         }`}
       >
-        {capturing ? "press…" : boundKey || "unset"}
+        {capturing ? "press…" : boundKey || fallback || "unset"}
       </button>
       <button
         type="button"
-        onClick={() => onClear(action.id)}
+        onClick={() => onClear(action)}
         disabled={!boundKey}
-        className="text-zinc-600 transition hover:text-red-400 disabled:opacity-30"
-        aria-label={`Clear binding for ${action.label}`}
+        aria-label={`Clear ${label}`}
+        className="px-1 text-zinc-600 transition hover:text-red-400 disabled:opacity-0"
       >
         ✕
       </button>
@@ -49,6 +46,10 @@ export default function SettingsPage() {
   const toggleCameraRelative = useStore((s) => s.toggleCameraRelative);
   const hintFacelets = useStore((s) => s.hintFacelets);
   const toggleHintFacelets = useStore((s) => s.toggleHintFacelets);
+  const practiceOrientation = useStore((s) => s.practiceOrientation);
+  const setPracticeOrientation = useStore((s) => s.setPracticeOrientation);
+  const scrambleOrientation = useStore((s) => s.scrambleOrientation);
+  const setScrambleOrientation = useStore((s) => s.setScrambleOrientation);
 
   const [capturing, setCapturing] = useState(null);
 
@@ -72,6 +73,11 @@ export default function SettingsPage() {
   }, [capturing, setBinding]);
 
   const isDefault = ACTIONS.every((a) => bindings[a.id] === DEFAULT_BINDINGS[a.id]);
+
+  // Ctrl+W is unreachable, so name whichever face turn currently sits there.
+  const wKeyAction = ACTIONS.find(
+    (a) => bindings[a.id] === "w" && /^[UDFBLR]'?$/.test(a.id),
+  )?.id;
 
   return (
     <div className="mx-auto max-w-5xl p-4 pb-16">
@@ -101,24 +107,56 @@ export default function SettingsPage() {
           <p className="mb-4 text-xs text-zinc-500">
             Click a key to rebind, then press the new one. Keys are read by physical
             position, so Shift and {wideModifier === "alt" ? "Alt" : "Ctrl"} never change
-            which action fires.
+            which action fires. A counter-clockwise turn works as Shift + its
+            clockwise key unless you give it a key of its own.
           </p>
 
-          {GROUPS.map((group) => (
-            <div key={group} className="mb-5 last:mb-0">
-              <h3 className="mb-1 px-3 text-[11px] font-semibold uppercase tracking-wider text-zinc-600">
-                {group}
+          {BINDING_MATRIX.map((section) => (
+            <div key={section.group} className="mb-6 last:mb-0">
+              <h3 className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+                {section.group}
               </h3>
-              {ACTIONS.filter((action) => action.group === group).map((action) => (
-                <BindingRow
-                  key={action.id}
-                  action={action}
-                  boundKey={bindings[action.id]}
-                  capturing={capturing === action.id}
-                  onCapture={setCapturing}
-                  onClear={(id) => setBinding(id, "")}
-                />
-              ))}
+              <p className="mb-2 text-[11px] text-zinc-600">{section.hint}</p>
+
+              <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-x-3 gap-y-1">
+                <span />
+                <span className="px-2 text-center text-[10px] uppercase tracking-wider text-zinc-600">
+                  Clockwise
+                </span>
+                <span className="px-2 text-center text-[10px] uppercase tracking-wider text-zinc-600">
+                  Counter-clockwise
+                </span>
+
+                {section.rows.map((row) => (
+                  <Fragment key={row.cw}>
+                    <div className="truncate py-1 text-sm text-zinc-300">
+                      {row.label}
+                      <span className="ml-2 font-mono text-[11px] text-zinc-600">
+                        {row.cw} / {row.ccw}
+                      </span>
+                    </div>
+                    <KeyCell
+                      action={row.cw}
+                      label={row.cw}
+                      boundKey={bindings[row.cw]}
+                      capturing={capturing === row.cw}
+                      onCapture={setCapturing}
+                      onClear={(id) => setBinding(id, "")}
+                    />
+                    <KeyCell
+                      action={row.ccw}
+                      label={row.ccw}
+                      boundKey={bindings[row.ccw]}
+                      // With no key of its own, a prime turn is Shift + the
+                      // clockwise key — so show that rather than "unset".
+                      fallback={bindings[row.cw] ? `⇧${bindings[row.cw]}` : ""}
+                      capturing={capturing === row.ccw}
+                      onCapture={setCapturing}
+                      onClear={(id) => setBinding(id, "")}
+                    />
+                  </Fragment>
+                ))}
+              </div>
             </div>
           ))}
         </section>
@@ -133,6 +171,10 @@ export default function SettingsPage() {
                 <span>Prime move</span>
                 <span className="font-mono text-zinc-200">Shift</span>
               </div>
+              <div className="flex justify-between text-zinc-400">
+                <span>Undo last move</span>
+                <span className="font-mono text-zinc-200">Ctrl+Z</span>
+              </div>
               <label className="block text-zinc-400">
                 Wide move
                 <select
@@ -145,15 +187,54 @@ export default function SettingsPage() {
                 </select>
               </label>
             </div>
-            {wideModifier === "ctrl" && (
+            {wideModifier === "ctrl" && wKeyAction && (
               <p className="mt-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-2.5 text-[11px] leading-relaxed text-amber-200/90">
                 Browsers reserve <span className="font-mono">Ctrl+W</span> for “close
                 tab” and will not let a page intercept it, so the wide{" "}
-                <span className="font-mono">u</span> turn cannot fire on{" "}
-                <span className="font-mono">Ctrl+W</span>. Switch to Alt if you use wide
-                U turns often.
+                <span className="font-mono">{wKeyAction.toLowerCase()}</span> turn
+                cannot fire. Switch to Alt, or move{" "}
+                <span className="font-mono">{wKeyAction}</span> off the W key, if you
+                use it often.
               </p>
             )}
+          </section>
+
+          <section className="rounded-xl border border-surface-700 bg-surface-900 p-4">
+            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-zinc-300">
+              Colour orientation
+            </h2>
+            <label className="block text-sm text-zinc-400">
+              Algorithm practice
+              <select
+                value={practiceOrientation}
+                onChange={(event) => setPracticeOrientation(event.target.value)}
+                className="mt-1 w-full rounded-lg border border-surface-600 bg-surface-800 px-2 py-1.5 text-zinc-200"
+              >
+                {Object.entries(ORIENTATIONS).map(([id, item]) => (
+                  <option key={id} value={id}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="mt-3 block text-sm text-zinc-400">
+              Scramble / solver
+              <select
+                value={scrambleOrientation}
+                onChange={(event) => setScrambleOrientation(event.target.value)}
+                className="mt-1 w-full rounded-lg border border-surface-600 bg-surface-800 px-2 py-1.5 text-zinc-200"
+              >
+                {Object.entries(ORIENTATIONS).map(([id, item]) => (
+                  <option key={id} value={id}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <p className="mt-2 text-[11px] leading-relaxed text-zinc-600">
+              Practice matches the case diagrams; the solver keeps the WCA
+              competition standard.
+            </p>
           </section>
 
           <section className="rounded-xl border border-surface-700 bg-surface-900 p-4">

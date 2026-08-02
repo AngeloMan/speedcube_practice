@@ -209,6 +209,21 @@ export const F2L_MASK = buildState(({ face, pos }) => {
   return F2L_VISIBLE.some((p) => samePos(p, pos)) ? FACE_COLOR[face] : HIDDEN;
 });
 
+/**
+ * A cube is solved when every face shows a single colour. Testing it this way
+ * is orientation-independent, so a solve still counts when the solver finishes
+ * with the cube rotated — which is the normal case after `x`/`y` rotations.
+ */
+export function isSolved(state) {
+  for (let face = 0; face < 6; face += 1) {
+    const first = state[face * 9];
+    for (let i = 1; i < 9; i += 1) {
+      if (state[face * 9 + i] !== first) return false;
+    }
+  }
+  return true;
+}
+
 /** The 27 stickers visible in an isometric U/F/R diagram, in reading order. */
 export function visibleStickers(state) {
   const u = state.slice(0, 9);

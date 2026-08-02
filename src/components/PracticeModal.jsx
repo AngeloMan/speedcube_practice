@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import TwistyViewer from "./TwistyViewer";
 import CubeThumb from "./CubeThumb";
 import { invertAlg } from "../lib/moves";
+import { ORIENTATIONS } from "../lib/stickering";
 import { ACTIONS, useStore } from "../store";
 
 const STICKERINGS = [
@@ -41,6 +42,8 @@ export default function PracticeModal({ caseData, category, onClose, onNavigate 
   const hintFacelets = useStore((s) => s.hintFacelets);
   const toggleHintFacelets = useStore((s) => s.toggleHintFacelets);
   const bindings = useStore((s) => s.bindings);
+  const practiceOrientation = useStore((s) => s.practiceOrientation);
+  const setPracticeOrientation = useStore((s) => s.setPracticeOrientation);
 
   useEffect(() => {
     setStickering(DEFAULT_STICKERING[category] ?? "full");
@@ -73,8 +76,9 @@ export default function PracticeModal({ caseData, category, onClose, onNavigate 
     dialogRef.current?.focus();
   }, []);
 
-  const handleMove = useCallback((notation) => {
-    setHistory((prev) => [...prev.slice(-40), notation]);
+  const handleMove = useCallback((notation, meta) => {
+    // An undo removes the move it reverses rather than appending to the log.
+    setHistory((prev) => (meta?.undo ? prev.slice(0, -1) : [...prev.slice(-40), notation]));
   }, []);
 
   const reset = () => {
@@ -133,6 +137,7 @@ export default function PracticeModal({ caseData, category, onClose, onNavigate 
                 ref={viewerRef}
                 setupAlg={setupAlg}
                 stickering={stickering}
+                orientation={practiceOrientation}
                 onMove={handleMove}
                 onFrameChange={setFrame}
               />
@@ -207,6 +212,20 @@ export default function PracticeModal({ caseData, category, onClose, onNavigate 
                 </select>
               </label>
               <label className="mt-3 block text-sm text-zinc-400">
+                Orientation
+                <select
+                  value={practiceOrientation}
+                  onChange={(event) => setPracticeOrientation(event.target.value)}
+                  className="mt-1 w-full rounded-lg border border-surface-600 bg-surface-800 px-2 py-1.5 text-zinc-200"
+                >
+                  {Object.entries(ORIENTATIONS).map(([id, item]) => (
+                    <option key={id} value={id}>
+                      {item.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="mt-3 block text-sm text-zinc-400">
                 Turn speed · <span className="font-mono text-zinc-300">{turnMs}ms</span>
                 <input
                   type="range"
@@ -244,7 +263,8 @@ export default function PracticeModal({ caseData, category, onClose, onNavigate 
                 ))}
               </div>
               <p className="mt-3 text-[11px] leading-relaxed text-zinc-600">
-                Shift = prime · Ctrl = wide · Ctrl+Shift = wide prime. ← → step
+                Shift = prime · Ctrl = wide · Ctrl+Shift = wide prime ·
+                <span className="font-mono"> Ctrl+Z</span> undoes. ← → step
                 through cases, Esc closes.
               </p>
             </section>

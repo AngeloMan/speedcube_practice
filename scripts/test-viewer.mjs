@@ -170,7 +170,7 @@ try {
   await page.screenshot({ path: "scripts/viewer-check.png" });
 
   // --- keyboard still drives the cube --------------------------------------
-  await page.keyboard.press("KeyW");
+  await page.keyboard.press("KeyE"); // U in the default schema
   await new Promise((resolve) => setTimeout(resolve, 400));
   const moveLog = await page.evaluate(() => {
     const heads = [...document.querySelectorAll("h3")];

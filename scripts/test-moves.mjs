@@ -104,4 +104,62 @@ check("x = r L'", visibleStickers(applyAlg(FULL_MASK, "x")), visibleStickers(app
 check("y = u D'", visibleStickers(applyAlg(FULL_MASK, "y")), visibleStickers(applyAlg(FULL_MASK, "u D'")));
 check("z = f B'", visibleStickers(applyAlg(FULL_MASK, "z")), visibleStickers(applyAlg(FULL_MASK, "f B'")));
 
-console.log(`all ${checks} assertions passed`);
+// --- solved detection -------------------------------------------------------
+const { isSolved } = await import("../src/lib/cube.js");
+check("a solved cube is solved", isSolved(FULL_MASK), true);
+check("one turn is not solved", isSolved(applyAlg(FULL_MASK, "R")), false);
+check("a scramble is not solved", isSolved(applyAlg(FULL_MASK, "R U2 D' B D'")), false);
+check(
+  "undoing a scramble solves it",
+  isSolved(applyAlg(applyAlg(FULL_MASK, "R U2 D' B D'"), invertAlg("R U2 D' B D'"))),
+  true,
+);
+// Detection is orientation-independent: finishing rotated still counts.
+for (const rotation of ["x", "y", "z", "x y", "x2 z'", "y2 x'"]) {
+  check(`solved after ${rotation}`, isSolved(applyAlg(FULL_MASK, rotation)), true);
+}
+check("sexy x6 is solved", isSolved(applyAlg(FULL_MASK, "R U R' U' ".repeat(6))), true);
+check("sexy x5 is not", isSolved(applyAlg(FULL_MASK, "R U R' U' ".repeat(5))), false);
+// A slice-only turn leaves faces non-uniform, so it must not read as solved.
+check("M alone is not solved", isSolved(applyAlg(FULL_MASK, "M")), false);
+check("M2 alone is not solved", isSolved(applyAlg(FULL_MASK, "M2")), false);
+
+// --- undo: a move followed by its inverse is a no-op -------------------------
+for (const token of ["U", "R'", "M2", "u", "x", "S'", "E", "D2"]) {
+  check(
+    `undo ${token}`,
+    applyAlg(applyAlg(LABELLED, token), invertAlg(token)).join(","),
+    LABELLED.join(","),
+  );
+}
+
+// --- prime bindings ---------------------------------------------------------
+// A key bound directly to a prime move must produce it, and Shift must invert
+// whatever the key is bound to — including a prime binding.
+check("prime action", applyModifiers("U'", { shift: false, wide: false }), "U'");
+check("shift inverts a prime binding", applyModifiers("U'", { shift: true, wide: false }), "U");
+check("wide prime", applyModifiers("U'", { shift: false, wide: true }), "u'");
+check("wide prime inverted", applyModifiers("U'", { shift: true, wide: true }), "u");
+check("prime slice", applyModifiers("M'", { shift: false, wide: false }), "M'");
+check("prime rotation", applyModifiers("z'", { shift: false, wide: false }), "z'");
+check("prime rotation inverted", applyModifiers("z'", { shift: true, wide: false }), "z");
+
+// Every action in the binding matrix must translate through the camera.
+const { BINDING_MATRIX } = await import("../src/store.js");
+const allActions = BINDING_MATRIX.flatMap((s) => s.rows.flatMap((r) => [r.cw, r.ccw]));
+check("matrix covers every move both ways", allActions.length, 24);
+for (const action of allActions) {
+  for (const shift of [false, true]) {
+    for (const wide of [false, true]) {
+      const screenMove = applyModifiers(action, { shift, wide });
+      assert.ok(screenMove, `${action} produced nothing`);
+      assert.ok(
+        toCubeNotation(screenMove, right90),
+        `${action} did not translate through the camera`,
+      );
+      checks += 2;
+    }
+  }
+}
+
+console.log(`all ${checks} assertions passed (including solved detection and undo)`);

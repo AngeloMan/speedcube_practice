@@ -7,15 +7,17 @@ import {
   useState,
 } from "react";
 import { DEFAULT_CAMERA, useStore } from "../store";
-import { IDENTITY_FRAME, applyModifiers, screenFrame, toCubeNotation } from "../lib/moves";
+import {
+  IDENTITY_FRAME,
+  applyModifiers,
+  invertAlg,
+  screenFrame,
+  toCubeNotation,
+} from "../lib/moves";
+import { isTypingTarget, keyFromEvent } from "../lib/keyboard";
+import { orientationSetup, stickeringMaskFor } from "../lib/stickering";
 
-/** Physical key for an event, so Shift/Alt never change which key was pressed. */
-export function keyFromEvent(event) {
-  if (/^Key[A-Z]$/.test(event.code)) return event.code.slice(3).toLowerCase();
-  if (/^Digit\d$/.test(event.code)) return event.code.slice(5);
-  if (/^Numpad\d$/.test(event.code)) return event.code.slice(6);
-  return (event.key ?? "").toLowerCase();
-}
+const MAX_HISTORY = 400;
 
 /**
  * Resolve once the element has a real box.
@@ -45,12 +47,6 @@ function whenSized(element, holder) {
 /** Exactly one WebGL cube should ever be live; this keeps us honest in dev. */
 let liveInstances = 0;
 
-const isTypingTarget = (target) =>
-  target instanceof HTMLElement &&
-  (target.tagName === "INPUT" ||
-    target.tagName === "TEXTAREA" ||
-    target.isContentEditable);
-
 /**
  * The one and only WebGL cube in the app.
  *
@@ -59,19 +55,33 @@ const isTypingTarget = (target) =>
  * flushes any in-flight animation the moment another key arrives.
  */
 const TwistyViewer = forwardRef(function TwistyViewer(
-  { setupAlg = "", stickering = "full", onMove, onFrameChange, keyboardEnabled = true },
+  {
+    setupAlg = "",
+    stickering = "full",
+    orientation = "white-top",
+    puzzle = "3x3x3",
+    backView = "none",
+    onMove,
+    onFrameChange,
+    keyboardEnabled = true,
+  },
   ref,
 ) {
   const containerRef = useRef(null);
   const playerRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [camera, setCamera] = useState(DEFAULT_CAMERA);
+  /** Every move applied, newest last — the undo stack. */
+  const historyRef = useRef([]);
 
   const turnMs = useStore((s) => s.turnMs);
   const bindings = useStore((s) => s.bindings);
   const wideModifier = useStore((s) => s.wideModifier);
   const hintFacelets = useStore((s) => s.hintFacelets);
   const cameraRelative = useStore((s) => s.cameraRelative);
+  // While a solve is being timed the user is turning a real cube; their
+  // keystrokes must not leak into the virtual one.
+  const timerActive = useStore((s) => s.timerActive);
 
   const frame = cameraRelative
     ? screenFrame(camera.latitude, camera.longitude)
@@ -104,12 +114,12 @@ const TwistyViewer = forwardRef(function TwistyViewer(
       if (disposed || !container) return;
 
       const player = new TwistyPlayer({
-        puzzle: "3x3x3",
+        puzzle,
         alg: "",
         visualization: "3D",
         background: "none",
         controlPanel: "none",
-        backView: "none",
+        backView,
         hintFacelets: "none",
         experimentalDragInput: "none", // we drive the camera ourselves
         cameraLatitude: DEFAULT_CAMERA.latitude,
@@ -141,21 +151,43 @@ const TwistyViewer = forwardRef(function TwistyViewer(
       setReady(false);
       container.innerHTML = "";
     };
-  }, []);
+  }, [puzzle, backView]);
 
   // ---- reactive config -----------------------------------------------------
   useEffect(() => {
     const player = playerRef.current;
     if (!player) return;
-    player.experimentalSetupAlg = setupAlg || "";
+    // The orientation prefix turns the cube so the requested colours face up
+    // and forward; the case itself is still set up in the standard frame.
+    const prefix = orientationSetup(orientation);
+    player.experimentalSetupAlg = [prefix, setupAlg].filter(Boolean).join(" ");
     player.alg = "";
-  }, [ready, setupAlg]);
+    historyRef.current = [];
+  }, [ready, setupAlg, orientation]);
 
   useEffect(() => {
     const player = playerRef.current;
-    if (!player) return;
-    player.experimentalStickering = stickering;
-  }, [ready, stickering]);
+    if (!player) return undefined;
+    let stale = false;
+
+    // In the default frame cubing's own stickering is exactly right. Once the
+    // cube is rotated we have to supply the mask ourselves, because cubing
+    // derives its masks from piece identity rather than from position.
+    if (!orientationSetup(orientation) || puzzle !== "3x3x3") {
+      player.experimentalStickering = stickering;
+      return undefined;
+    }
+
+    stickeringMaskFor(stickering, orientation).then((mask) => {
+      if (stale || !playerRef.current) return;
+      if (mask) player.experimentalStickeringMaskOrbits = mask;
+      else player.experimentalStickering = stickering;
+    });
+
+    return () => {
+      stale = true;
+    };
+  }, [ready, stickering, orientation, puzzle]);
 
   useEffect(() => {
     const player = playerRef.current;
@@ -194,15 +226,28 @@ const TwistyViewer = forwardRef(function TwistyViewer(
   }, []);
 
   const applyNotation = useCallback(
-    (notation) => {
+    (notation, { record = true, undo = false } = {}) => {
       const player = playerRef.current;
       if (!player || !notation) return;
       flush();
       player.experimentalAddMove(notation, { cancel: false });
-      onMove?.(notation);
+      if (record) {
+        historyRef.current.push(notation);
+        if (historyRef.current.length > MAX_HISTORY) historyRef.current.shift();
+      }
+      onMove?.(notation, { undo });
     },
     [flush, onMove],
   );
+
+  /** Undo the most recent move by playing its inverse. */
+  const undo = useCallback(() => {
+    const last = historyRef.current.pop();
+    if (!last) return false;
+    // The inverse is not recorded, or undo would undo itself.
+    applyNotation(invertAlg(last), { record: false, undo: true });
+    return true;
+  }, [applyNotation]);
 
   useImperativeHandle(
     ref,
@@ -211,31 +256,45 @@ const TwistyViewer = forwardRef(function TwistyViewer(
       applyMove: applyNotation,
       /** Screen-relative move, translated through the live camera. */
       applyScreenMove: (token) => applyNotation(toCubeNotation(token, frameRef.current)),
+      undo,
+      history: () => [...historyRef.current],
       playAlg: (alg) => {
         const player = playerRef.current;
         if (!player) return;
         player.alg = alg;
         player.jumpToStart({ flash: false });
         player.play();
+        historyRef.current = [];
       },
       reset: () => {
         const player = playerRef.current;
         if (!player) return;
         player.alg = "";
         player.jumpToStart({ flash: false });
+        historyRef.current = [];
       },
       resetCamera: () => setCamera(DEFAULT_CAMERA),
     }),
-    [applyNotation],
+    [applyNotation, undo],
   );
 
   // ---- keyboard ------------------------------------------------------------
   useEffect(() => {
-    if (!keyboardEnabled) return undefined;
+    if (!keyboardEnabled || timerActive) return undefined;
 
     const onKeyDown = (event) => {
-      if (event.repeat || isTypingTarget(event.target)) return;
+      if (isTypingTarget(event.target)) return;
       const key = keyFromEvent(event);
+
+      // Ctrl+Z undoes, and it repeats: holding it rewinds the solve. It is
+      // checked before the bindings so it always wins over a Ctrl-modified turn.
+      if (key === "z" && (event.ctrlKey || event.metaKey) && !event.altKey) {
+        event.preventDefault();
+        undo();
+        return;
+      }
+      if (event.repeat) return;
+
       const action = Object.keys(bindings).find((id) => bindings[id] && bindings[id] === key);
       if (!action) return;
 
@@ -252,7 +311,7 @@ const TwistyViewer = forwardRef(function TwistyViewer(
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [bindings, wideModifier, keyboardEnabled, applyNotation]);
+  }, [bindings, wideModifier, keyboardEnabled, timerActive, applyNotation, undo]);
 
   // ---- camera drag ---------------------------------------------------------
   useEffect(() => {

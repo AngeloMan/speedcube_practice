@@ -8,9 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node scripts/test-moves.mjs",
     "prebuild": "node scripts/parse-algs.mjs",
-    "test:viewer": "vite build && node scripts/test-viewer.mjs"
+    "test": "node scripts/test-defaults.mjs && node scripts/test-moves.mjs && node scripts/test-timer.mjs && node scripts/test-render.mjs",
+    "test:browser": "vite build && node scripts/test-viewer.mjs && node scripts/test-solve-mode.mjs && node scripts/test-solving.mjs"
   },
   "dependencies": {
     "cubing": "^0.57.0",
