@@ -1,0 +1,489 @@
+[
+  {
+    "id": "f2l-1",
+    "title": "Basic cases",
+    "cases": [
+      {
+        "id": "f2l-1",
+        "number": "1",
+        "title": "F2L Case 1",
+        "group": "Basic cases",
+        "groupId": "f2l-1",
+        "alg": "R U R'",
+        "display": "R U R'",
+        "image": "./Algorithms _ SolveTheCube_files/xbxxyxxxrxxbxbxxbxwxxxrxxrx.webp",
+        "stickers": "xbxxyxxxrxxbxbxxbxwxxxrxxrx"
+      },
+      {
+        "id": "f2l-2",
+        "number": "2",
+        "title": "F2L Case 2",
+        "group": "Basic cases",
+        "groupId": "f2l-1",
+        "alg": "F' U' F",
+        "display": "F' U' F",
+        "image": "./Algorithms _ SolveTheCube_files/xxxryxxxbxxwxbxxbxrxxxrxxrx.webp",
+        "stickers": "xxxryxxxbxxwxbxxbxrxxxrxxrx"
+      },
+      {
+        "id": "f2l-3",
+        "number": "3",
+        "title": "F2L Case 3",
+        "group": "Basic cases",
+        "groupId": "f2l-1",
+        "alg": "U R U' R'",
+        "display": "U R U' R'",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxybxxbxxwxbxxbxrrxxrxxrx.webp",
+        "stickers": "xxxxybxxbxxwxbxxbxrrxxrxxrx"
+      },
+      {
+        "id": "f2l-4",
+        "number": "4",
+        "title": "F2L Case 4",
+        "group": "Basic cases",
+        "groupId": "f2l-1",
+        "alg": "U' F' U F",
+        "display": "U' F' U F",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxrrxbbxbxxbxwxxxrxxrx.webp",
+        "stickers": "xxxxyxxrrxbbxbxxbxwxxxrxxrx"
+      }
+    ]
+  },
+  {
+    "id": "f2l-2",
+    "title": "Corner and edge in top",
+    "cases": [
+      {
+        "id": "f2l-5",
+        "number": "5",
+        "title": "F2L Case 5",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U' R U' R' U R U R'",
+        "display": "(U' R U') (R' U R) U R'",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxybxxrxxbxbxxbxwrxxrxxrx.webp",
+        "stickers": "xxxxybxxrxxbxbxxbxwrxxrxxrx"
+      },
+      {
+        "id": "f2l-6",
+        "number": "6",
+        "title": "F2L Case 6",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U F' U F U' F' U' F",
+        "display": "(U F' U) (F U' F') U' F",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxrbxbwxbxxbxrxxxrxxrx.webp",
+        "stickers": "xxxxyxxrbxbwxbxxbxrxxxrxxrx"
+      },
+      {
+        "id": "f2l-7",
+        "number": "7",
+        "title": "F2L Case 7",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U' R U R' U R U R'",
+        "display": "(U' R U) (R' U R) U R'",
+        "image": "./Algorithms _ SolveTheCube_files/xxxbyxxxrxxbxbxxbxwxxxrxxrx.webp",
+        "stickers": "xxxbyxxxrxxbxbxxbxwxxxrxxrx"
+      },
+      {
+        "id": "f2l-8",
+        "number": "8",
+        "title": "F2L Case 8",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U F' U' F U' F' U' F",
+        "display": "(U F' U') (F U' F') U' F",
+        "image": "./Algorithms _ SolveTheCube_files/xrxxyxxxbxxwxbxxbxrxxxrxxrx.webp",
+        "stickers": "xrxxyxxxbxxwxbxxbxrxxxrxxrx"
+      },
+      {
+        "id": "f2l-9",
+        "number": "9",
+        "title": "F2L Case 9",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "d R' U2 R d' R U R'",
+        "display": "d (R' U2 R) d' (R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxbrxrbxbxxbxwxxxrxxrx.webp",
+        "stickers": "xxxxyxxbrxrbxbxxbxwxxxrxxrx"
+      },
+      {
+        "id": "f2l-10",
+        "number": "10",
+        "title": "F2L Case 10",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U' R U2 R' d R' U' R",
+        "display": "U' (R U2 R') d (R' U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyrxxbxxwxbxxbxrbxxrxxrx.webp",
+        "stickers": "xxxxyrxxbxxwxbxxbxrbxxrxxrx"
+      },
+      {
+        "id": "f2l-11",
+        "number": "11",
+        "title": "F2L Case 11",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "R U' R' U d R' U' R",
+        "display": "(R U' R' U) d (R' U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyrxxrxxbxbxxbxwbxxrxxrx.webp",
+        "stickers": "xxxxyrxxrxxbxbxxbxwbxxrxxrx"
+      },
+      {
+        "id": "f2l-12",
+        "number": "12",
+        "title": "F2L Case 12",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "F' U F U' d' F U F'",
+        "display": "(F' U F U') d' (F U F')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxbbxrwxbxxbxrxxxrxxrx.webp",
+        "stickers": "xxxxyxxbbxrwxbxxbxrxxxrxxrx"
+      },
+      {
+        "id": "f2l-13",
+        "number": "13",
+        "title": "F2L Case 13",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U F' U2 F U F' U2 F",
+        "display": "(U F' U2 F) (U F' U2 F)",
+        "image": "./Algorithms _ SolveTheCube_files/xrxxyxxxrxxbxbxxbxwxxxrxxrx.webp",
+        "stickers": "xrxxyxxxrxxbxbxxbxwxxxrxxrx"
+      },
+      {
+        "id": "f2l-14",
+        "number": "14",
+        "title": "F2L Case 14",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U' R U2 R' U' R U2 R'",
+        "display": "(U' R U2 R') (U' R U2 R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxbyxxxbxxwxbxxbxrxxxrxxrx.webp",
+        "stickers": "xxxbyxxxbxxwxbxxbxrxxxrxxrx"
+      },
+      {
+        "id": "f2l-15",
+        "number": "15",
+        "title": "F2L Case 15",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U F' U' F U F' U2 F",
+        "display": "(U F' U' F) (U F' U2 F)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxryxxxrxxbxbxxbxwxxxrxxrx.webp",
+        "stickers": "xxxryxxxrxxbxbxxbxwxxxrxxrx"
+      },
+      {
+        "id": "f2l-16",
+        "number": "16",
+        "title": "F2L Case 16",
+        "group": "Corner and edge in top",
+        "groupId": "f2l-2",
+        "alg": "U' R U R' U' R U2 R'",
+        "display": "(U' R U R') (U' R U2 R')",
+        "image": "./Algorithms _ SolveTheCube_files/xbxxyxxxbxxwxbxxbxrxxxrxxrx.webp",
+        "stickers": "xbxxyxxxbxxwxbxxbxrxxxrxxrx"
+      }
+    ]
+  },
+  {
+    "id": "f2l-3",
+    "title": "Corner pointing up, edge in top",
+    "cases": [
+      {
+        "id": "f2l-17",
+        "number": "17",
+        "title": "F2L Case 17",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "R U2 R' U' R U R'",
+        "display": "(R U2 R' U') (R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxybxxwxxrxbxxbxbrxxrxxrx.webp",
+        "stickers": "xxxxybxxwxxrxbxxbxbrxxrxxrx"
+      },
+      {
+        "id": "f2l-18",
+        "number": "18",
+        "title": "F2L Case 18",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "F' U2 F U F' U' F",
+        "display": "(F' U2 F U) (F' U' F)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxrwxbrxbxxbxbxxxrxxrx.webp",
+        "stickers": "xxxxyxxrwxbrxbxxbxbxxxrxxrx"
+      },
+      {
+        "id": "f2l-19",
+        "number": "19",
+        "title": "F2L Case 19",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "U R U2 R' U R U' R'",
+        "display": "(U R U2 R') (U R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/xbxxyxxxwxxrxbxxbxbxxxrxxrx.webp",
+        "stickers": "xbxxyxxxwxxrxbxxbxbxxxrxxrx"
+      },
+      {
+        "id": "f2l-20",
+        "number": "20",
+        "title": "F2L Case 20",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "U' F' U2 F U' F' U F",
+        "display": "(U' F' U2 F) (U' F' U F)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxryxxxwxxrxbxxbxbxxxrxxrx.webp",
+        "stickers": "xxxryxxxwxxrxbxxbxbxxxrxxrx"
+      },
+      {
+        "id": "f2l-21",
+        "number": "21",
+        "title": "F2L Case 21",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "U2 R U R' U R U' R'",
+        "display": "U2 (R U R' U) (R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxbyxxxwxxrxbxxbxbxxxrxxrx.webp",
+        "stickers": "xxxbyxxxwxxrxbxxbxbxxxrxxrx"
+      },
+      {
+        "id": "f2l-22",
+        "number": "22",
+        "title": "F2L Case 22",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "U2 F' U' F U' F' U F",
+        "display": "U2 (F' U' F U') (F' U F)",
+        "image": "./Algorithms _ SolveTheCube_files/xrxxyxxxwxxrxbxxbxbxxxrxxrx.webp",
+        "stickers": "xrxxyxxxwxxrxbxxbxbxxxrxxrx"
+      },
+      {
+        "id": "f2l-23",
+        "number": "23",
+        "title": "F2L Case 23",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "R U R' U' U' R U R' U' R U R'",
+        "display": "(R U R' U') U' (R U R' U') (R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxbwxrrxbxxbxbxxxrxxrx.webp",
+        "stickers": "xxxxyxxbwxrrxbxxbxbxxxrxxrx"
+      },
+      {
+        "id": "f2l-24",
+        "number": "24",
+        "title": "F2L Case 24",
+        "group": "Corner pointing up, edge in top",
+        "groupId": "f2l-3",
+        "alg": "y' R' U' R U U R' U' R U R' U' R",
+        "display": "y' (R' U' R U) U (R' U' R U) (R' U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyrxxwxxrxbxxbxbbxxrxxrx.webp",
+        "stickers": "xxxxyrxxwxxrxbxxbxbbxxrxxrx"
+      }
+    ]
+  },
+  {
+    "id": "f2l-4",
+    "title": "Corner in top, edge in middle",
+    "cases": [
+      {
+        "id": "f2l-25",
+        "number": "25",
+        "title": "F2L Case 25",
+        "group": "Corner in top, edge in middle",
+        "groupId": "f2l-4",
+        "alg": "U F' U F U F' U2 F",
+        "display": "(U F' U F) (U F' U2 F)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxrxxbxbbxbxwxxrrxxrx.webp",
+        "stickers": "xxxxyxxxrxxbxbbxbxwxxrrxxrx"
+      },
+      {
+        "id": "f2l-26",
+        "number": "26",
+        "title": "F2L Case 26",
+        "group": "Corner in top, edge in middle",
+        "groupId": "f2l-4",
+        "alg": "U' R U' R' U' R U2 R'",
+        "display": "(U' R U' R') (U' R U2 R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxbxxwxbbxbxrxxrrxxrx.webp",
+        "stickers": "xxxxyxxxbxxwxbbxbxrxxrrxxrx"
+      },
+      {
+        "id": "f2l-27",
+        "number": "27",
+        "title": "F2L Case 27",
+        "group": "Corner in top, edge in middle",
+        "groupId": "f2l-4",
+        "alg": "U F' U' F d' F U F'",
+        "display": "(U F' U' F) (d' F U F')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxrxxbxbrxbxwxxbrxxrx.webp",
+        "stickers": "xxxxyxxxrxxbxbrxbxwxxbrxxrx"
+      },
+      {
+        "id": "f2l-28",
+        "number": "28",
+        "title": "F2L Case 28",
+        "group": "Corner in top, edge in middle",
+        "groupId": "f2l-4",
+        "alg": "U' R U R' d R' U' R",
+        "display": "(U' R U R') (d R' U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxbxxwxbrxbxrxxbrxxrx.webp",
+        "stickers": "xxxxyxxxbxxwxbrxbxrxxbrxxrx"
+      },
+      {
+        "id": "f2l-29",
+        "number": "29",
+        "title": "F2L Case 29",
+        "group": "Corner in top, edge in middle",
+        "groupId": "f2l-4",
+        "alg": "R U' R' d R' U R",
+        "display": "(R U' R') (d R' U R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxwxxrxbrxbxbxxbrxxrx.webp",
+        "stickers": "xxxxyxxxwxxrxbrxbxbxxbrxxrx"
+      },
+      {
+        "id": "f2l-30",
+        "number": "30",
+        "title": "F2L Case 30",
+        "group": "Corner in top, edge in middle",
+        "groupId": "f2l-4",
+        "alg": "R U R' U' R U R' U' R U R'",
+        "display": "(R U R' U') (R U R' U') (R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxwxxrxbbxbxbxxrrxxrx.webp",
+        "stickers": "xxxxyxxxwxxrxbbxbxbxxrrxxrx"
+      }
+    ]
+  },
+  {
+    "id": "f2l-5",
+    "title": "Corner in bottom, edge in top",
+    "cases": [
+      {
+        "id": "f2l-31",
+        "number": "31",
+        "title": "F2L Case 31",
+        "group": "Corner in bottom, edge in top",
+        "groupId": "f2l-5",
+        "alg": "U R U' R' U' F' U F",
+        "display": "(U R U' R') (U' F' U F)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxrxxbxxbxxbbxxxxrxrrx.webp",
+        "stickers": "xxxxyxxrxxbxxbxxbbxxxxrxrrx"
+      },
+      {
+        "id": "f2l-32",
+        "number": "32",
+        "title": "F2L Case 32",
+        "group": "Corner in bottom, edge in top",
+        "groupId": "f2l-5",
+        "alg": "U' F' U F U R U' R'",
+        "display": "(U' F' U F) (U R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxybxxxxxxxbxxbbxrxxrxrrx.webp",
+        "stickers": "xxxxybxxxxxxxbxxbbxrxxrxrrx"
+      },
+      {
+        "id": "f2l-33",
+        "number": "33",
+        "title": "F2L Case 33",
+        "group": "Corner in bottom, edge in top",
+        "groupId": "f2l-5",
+        "alg": "F' U F U' F' U F",
+        "display": "(F' U F) (U' F' U F)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxrxxbxxbxxbrxxxxrxwrx.webp",
+        "stickers": "xxxxyxxrxxbxxbxxbrxxxxrxwrx"
+      },
+      {
+        "id": "f2l-34",
+        "number": "34",
+        "title": "F2L Case 34",
+        "group": "Corner in bottom, edge in top",
+        "groupId": "f2l-5",
+        "alg": "R U' R' U R U' R'",
+        "display": "(R U' R') (U R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxybxxxxxxxbxxbwxrxxrxbrx.webp",
+        "stickers": "xxxxybxxxxxxxbxxbwxrxxrxbrx"
+      },
+      {
+        "id": "f2l-35",
+        "number": "35",
+        "title": "F2L Case 35",
+        "group": "Corner in bottom, edge in top",
+        "groupId": "f2l-5",
+        "alg": "R U R' U' R U R'",
+        "display": "(R U R') (U' R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxybxxxxxxxbxxbrxrxxrxwrx.webp",
+        "stickers": "xxxxybxxxxxxxbxxbrxrxxrxwrx"
+      },
+      {
+        "id": "f2l-36",
+        "number": "36",
+        "title": "F2L Case 36",
+        "group": "Corner in bottom, edge in top",
+        "groupId": "f2l-5",
+        "alg": "F' U' F U F' U' F",
+        "display": "(F' U' F) (U F' U' F)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxrxxbxxbxxbwxxxxrxbrx.webp",
+        "stickers": "xxxxyxxrxxbxxbxxbwxxxxrxbrx"
+      }
+    ]
+  },
+  {
+    "id": "f2l-6",
+    "title": "Corner in bottom, edge in middle",
+    "cases": [
+      {
+        "id": "f2l-37",
+        "number": "37",
+        "title": "F2L Case 37",
+        "group": "Corner in bottom, edge in middle",
+        "groupId": "f2l-6",
+        "alg": "R U' R' U R U2 R' U R U' R'",
+        "display": "(R U' R' U) R U2 R' (U R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxxxxxxbbxbrxxxrrxwrx.webp",
+        "stickers": "xxxxyxxxxxxxxbbxbrxxxrrxwrx"
+      },
+      {
+        "id": "f2l-38",
+        "number": "38",
+        "title": "F2L Case 38",
+        "group": "Corner in bottom, edge in middle",
+        "groupId": "f2l-6",
+        "alg": "R U' R' U' R U R' U' R U2 R'",
+        "display": "(R U' R' U') (R U R' U') (R U2 R')",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxxxxxxbbxbwxxxrrxbrx.webp",
+        "stickers": "xxxxyxxxxxxxxbbxbwxxxrrxbrx"
+      },
+      {
+        "id": "f2l-39",
+        "number": "39",
+        "title": "F2L Case 39",
+        "group": "Corner in bottom, edge in middle",
+        "groupId": "f2l-6",
+        "alg": "R U R' U' R U' R' U d R' U' R",
+        "display": "(R U R' U') (R U' R') U d (R' U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxxxxxxbrxbrxxxbrxwrx.webp",
+        "stickers": "xxxxyxxxxxxxxbrxbrxxxbrxwrx"
+      },
+      {
+        "id": "f2l-40",
+        "number": "40",
+        "title": "F2L Case 40",
+        "group": "Corner in bottom, edge in middle",
+        "groupId": "f2l-6",
+        "alg": "R U' R' d R' U' R U' R' U' R",
+        "display": "(R U' R') d (R' U' R U') (R' U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxxxxxxbrxbwxxxbrxbrx.webp",
+        "stickers": "xxxxyxxxxxxxxbrxbwxxxbrxbrx"
+      },
+      {
+        "id": "f2l-41",
+        "number": "41",
+        "title": "F2L Case 41",
+        "group": "Corner in bottom, edge in middle",
+        "groupId": "f2l-6",
+        "alg": "R U' R' d R' U2 R U R' U2 R",
+        "display": "(R U' R' d R' U2 R) (U R' U2 R)",
+        "image": "./Algorithms _ SolveTheCube_files/xxxxyxxxxxxxxbrxbbxxxbrxrrx.webp",
+        "stickers": "xxxxyxxxxxxxxbrxbbxxxbrxrrx"
+      }
+    ]
+  }
+]

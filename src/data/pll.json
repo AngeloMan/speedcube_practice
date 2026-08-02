@@ -1,0 +1,251 @@
+[
+  {
+    "id": "pll-edges",
+    "title": "Edges only",
+    "cases": [
+      {
+        "id": "pll-H",
+        "number": "H",
+        "title": "PLL H",
+        "group": "Edges only",
+        "groupId": "pll-edges",
+        "alg": "M2 U M2 U2 M2 U M2",
+        "display": "(M2 U M2) U2 (M2 U M2)",
+        "image": "./Algorithms _ SolveTheCube_files/pll_H.webp",
+        "stickers": "yyyyyyyyybgbbbbbbbrorrrrrrr"
+      },
+      {
+        "id": "pll-Z",
+        "number": "Z",
+        "title": "PLL Z",
+        "group": "Edges only",
+        "groupId": "pll-edges",
+        "alg": "R' U' R2 U R U R' U' R U R U' R U' R' U2",
+        "display": "R' U' R2 U (R U R' U') R U R U' R U' R' U2",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Z.webp",
+        "stickers": "yyyyyyyyybrbbbbbbbrbrrrrrrr"
+      },
+      {
+        "id": "pll-Ua",
+        "number": "Ua",
+        "title": "PLL Ua",
+        "group": "Edges only",
+        "groupId": "pll-edges",
+        "alg": "R2 U' R' U' R U R U R U' R",
+        "display": "R2 U' (R' U' R) U R U (R U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Ua.webp",
+        "stickers": "yyyyyyyyybbbbbbbbbrgrrrrrrr"
+      },
+      {
+        "id": "pll-Ub",
+        "number": "Ub",
+        "title": "PLL Ub",
+        "group": "Edges only",
+        "groupId": "pll-edges",
+        "alg": "R' U R' U' R' U' R' U R U R2",
+        "display": "(R' U R' U') R' U' (R' U R) U R2",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Ub.webp",
+        "stickers": "yyyyyyyyybbbbbbbbbrorrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "pll-corners",
+    "title": "Corners only",
+    "cases": [
+      {
+        "id": "pll-Aa",
+        "number": "Aa",
+        "title": "PLL Aa",
+        "group": "Corners only",
+        "groupId": "pll-corners",
+        "alg": "x z' R2 U2 R' D' R U2 R' D R' z x'",
+        "display": "x z' R2 U2 (R' D' R) U2 (R' D R') z x'",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Aa.webp",
+        "stickers": "yyyyyyyyybbgbbbbbborbrrrrrr"
+      },
+      {
+        "id": "pll-Ab",
+        "number": "Ab",
+        "title": "PLL Ab",
+        "group": "Corners only",
+        "groupId": "pll-corners",
+        "alg": "x R2 D2 R U R' D2 R U' R x'",
+        "display": "x R2 D2 (R U R') D2 (R U' R) x'",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Ab.webp",
+        "stickers": "yyyyyyyyybbrbbbbbbgrgrrrrrr"
+      },
+      {
+        "id": "pll-E",
+        "number": "E",
+        "title": "PLL E",
+        "group": "Corners only",
+        "groupId": "pll-corners",
+        "alg": "R2 U R' U' y R U R' U' R U R' U' R U R' y' R U' R2'",
+        "display": "R2 U R' U' y (R U R' U') (R U R' U') (R U R') y' (R U' R2')",
+        "image": "./Algorithms _ SolveTheCube_files/pll_E.webp",
+        "stickers": "yyyyyyyyyrbobbbbbbbrgrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "pll-edgesandcorners",
+    "title": "Edges and corners",
+    "cases": [
+      {
+        "id": "pll-T",
+        "number": "T",
+        "title": "PLL T",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "R U R' U' R' F R2 U' R' U' R U R' F'",
+        "display": "(R U R' U') R' F R2 U' R' U' R U R' F'",
+        "image": "./Algorithms _ SolveTheCube_files/pll_T.webp",
+        "stickers": "yyyyyyyyybbrbbbbbbgobrrrrrr"
+      },
+      {
+        "id": "pll-Y",
+        "number": "Y",
+        "title": "PLL Y",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "F R U' R' U' R U R' F' R U R' U' R' F R F'",
+        "display": "(F R U' R') U' (R U R' F') (R U R' U') (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Y.webp",
+        "stickers": "yyyyyyyyybbgbbbbbborrrrrrrr"
+      },
+      {
+        "id": "pll-F",
+        "number": "F",
+        "title": "PLL F",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "U' R' U R U' R2 F' U' F U x R U R' U' R2 x'",
+        "display": "U' (R' U R U') R2 (F' U' F U) x (R U R' U') R2 x'",
+        "image": "./Algorithms _ SolveTheCube_files/pll_F.webp",
+        "stickers": "yyyyyyyyybgrbbbbbbgrbrrrrrr"
+      },
+      {
+        "id": "pll-V",
+        "number": "V",
+        "title": "PLL V",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "R' U R' U' y R' D R' D' R2 y' R' B' R B R",
+        "display": "(R' U R' U') y (R' D R' D') R2 y' (R' B' R B R)",
+        "image": "./Algorithms _ SolveTheCube_files/pll_V.webp",
+        "stickers": "yyyyyyyyybbgbbbbbbogrrrrrrr"
+      },
+      {
+        "id": "pll-Ja",
+        "number": "Ja",
+        "title": "PLL Ja",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "L' U' L F L' U' L U L F' L2 U L U",
+        "display": "L' U' L F (L' U' L U) L F' L2 U L U",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Ja.webp",
+        "stickers": "yyyyyyyyyoobbbbbbbrrrrrrrrr"
+      },
+      {
+        "id": "pll-Jb",
+        "number": "Jb",
+        "title": "PLL Jb",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "R U R' F' R U R' U' R' F R2 U' R' U'",
+        "display": "R U R' F' (R U R' U') R' F R2 U' R' U'",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Jb.webp",
+        "stickers": "yyyyyyyyybrrbbbbbbgbbrrrrrr"
+      },
+      {
+        "id": "pll-Ra",
+        "number": "Ra",
+        "title": "PLL Ra",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "L U2 L' U2 L F' L' U' L U L F L2 U",
+        "display": "(L U2 L') U2 L F' (L' U' L U) L F L2 U",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Ra.webp",
+        "stickers": "yyyyyyyyybobbbbbbbrrgrrrrrr"
+      },
+      {
+        "id": "pll-Rb",
+        "number": "Rb",
+        "title": "PLL Rb",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "R' U2 R U2 R' F R U R' U' R' F' R2 U'",
+        "display": "(R' U2 R) U2 R' F (R U R' U') R' F' R2 U'",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Rb.webp",
+        "stickers": "yyyyyyyyybrbbbbbbbrbgrrrrrr"
+      },
+      {
+        "id": "pll-Na",
+        "number": "Na",
+        "title": "PLL Na",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'",
+        "display": "(R U R' U) (R U R' F') (R U R' U') R' F R2 U' R' U2 (R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Na.webp",
+        "stickers": "yyyyyyyyygbbbbbbbbroorrrrrr"
+      },
+      {
+        "id": "pll-Nb",
+        "number": "Nb",
+        "title": "PLL Nb",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "R' U R U' R' F' U' F R U R' F R' F' R U' R",
+        "display": "(R' U R U') R' (F' U' F) (R U R' F) R' F' (R U' R)",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Nb.webp",
+        "stickers": "yyyyyyyyybbgbbbbbboorrrrrrr"
+      },
+      {
+        "id": "pll-Ga",
+        "number": "Ga",
+        "title": "PLL Ga",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "y R2' u R' U R' U' R u' R2 y' R' U R",
+        "display": "y R2' u (R' U R' U') (R u' R2) y' (R' U R)",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Ga.webp",
+        "stickers": "yyyyyyyyyogobbbbbbbrrrrrrrr"
+      },
+      {
+        "id": "pll-Gb",
+        "number": "Gb",
+        "title": "PLL Gb",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "R' U' R y R2 u R' U R U' R u' R2",
+        "display": "(R' U' R) y R2 u (R' U R U') (R u' R2)",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Gb.webp",
+        "stickers": "yyyyyyyyyrogbbbbbborrrrrrrr"
+      },
+      {
+        "id": "pll-Gc",
+        "number": "Gc",
+        "title": "PLL Gc",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "y R2' u' R U' R U R' u R2 y R U' R'",
+        "display": "y R2' u' R U' (R U R' u) R2 y (R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Gc.webp",
+        "stickers": "yyyyyyyyyrgrbbbbbbgborrrrrr"
+      },
+      {
+        "id": "pll-Gd",
+        "number": "Gd",
+        "title": "PLL Gd",
+        "group": "Edges and corners",
+        "groupId": "pll-edgesandcorners",
+        "alg": "y2 R U R' y' R2 u' R U' R' U R' u R2",
+        "display": "y2 (R U R') y' (R2 u' R) U' (R' U R') u R2",
+        "image": "./Algorithms _ SolveTheCube_files/pll_Gd.webp",
+        "stickers": "yyyyyyyyygrobbbbbbbgbrrrrrr"
+      }
+    ]
+  }
+]

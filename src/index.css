@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Dark is the design target; light re-points the same variables. */
+  :root,
+  html.dark {
+    color-scheme: dark;
+    --s-950: 10 10 12;
+    --s-900: 17 17 20;
+    --s-850: 22 22 27;
+    --s-800: 28 28 34;
+    --s-700: 38 38 46;
+    --s-600: 51 51 61;
+    --t-100: 244 244 245;
+    --t-200: 228 228 231;
+    --t-300: 212 212 216;
+    --t-400: 161 161 170;
+    --t-500: 113 113 122;
+    --t-600: 82 82 91;
+    --t-700: 63 63 70;
+    --t-800: 39 39 42;
+  }
+
+  html:not(.dark) {
+    color-scheme: light;
+    --s-950: 244 244 245;
+    --s-900: 255 255 255;
+    --s-850: 250 250 251;
+    --s-800: 238 238 241;
+    --s-700: 220 220 226;
+    --s-600: 196 196 205;
+    --t-100: 24 24 27;
+    --t-200: 39 39 42;
+    --t-300: 63 63 70;
+    --t-400: 82 82 91;
+    --t-500: 113 113 122;
+    --t-600: 148 148 158;
+    --t-700: 190 190 199;
+    --t-800: 220 220 226;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface-950 text-zinc-200 antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-surface-700;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-600;
+  }
+}
+
+/*
+ * TwistyPlayer sizing.
+ *
+ * An author rule on the host element outranks the `:host` rule inside the
+ * shadow root, which makes this block easy to get catastrophically wrong.
+ * cubing.js declares `:host { display: grid }` and its single shadow child
+ * `.wrapper` carries `contain: size` with no height of its own — it is sized
+ * purely by being stretched as a grid item. Forcing the host to `display: block`
+ * (or `flex`) therefore lays the wrapper out as if it had no contents, it
+ * collapses to 0px, and the renderer is handed a 0-height canvas.
+ *
+ * So: set the box, never touch `display`.
+ *
+ * The canvas itself cannot be reached from here. It lives in a *closed* shadow
+ * root, so neither `twisty-player canvas` nor the long-removed
+ * `twisty-player::shadow canvas` matches anything. cubing.js sizes it itself
+ * from the host's client box, which is exactly why sizing the host is the whole
+ * job.
+ */
+twisty-player {
+  width: 100%;
+  height: 100%;
+  /* Safety net: the player is skipped entirely if it ever measures 0 tall. */
+  min-height: 320px;
+}

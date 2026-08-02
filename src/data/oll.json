@@ -1,0 +1,707 @@
+[
+  {
+    "id": "oll-cross",
+    "title": "Crosses",
+    "cases": [
+      {
+        "id": "oll-27",
+        "number": "27",
+        "title": "OLL 27",
+        "group": "Crosses",
+        "groupId": "oll-cross",
+        "alg": "R' U2 R U R' U R",
+        "display": "(R' U2 R) U (R' U R)",
+        "image": "./Algorithms _ SolveTheCube_files/oll_27.webp",
+        "stickers": "xyxyyyxyyxxxbbbbbbxxyrrrrrr"
+      },
+      {
+        "id": "oll-26",
+        "number": "26",
+        "title": "OLL 26",
+        "group": "Crosses",
+        "groupId": "oll-cross",
+        "alg": "R U2 R' U' R U' R'",
+        "display": "(R U2 R') U' (R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_26.webp",
+        "stickers": "xyyyyyxyxyxxbbbbbbyxxrrrrrr"
+      },
+      {
+        "id": "oll-25",
+        "number": "25",
+        "title": "OLL 25",
+        "group": "Crosses",
+        "groupId": "oll-cross",
+        "alg": "F' r U R' U' r' F R",
+        "display": "F' (r U R' U') (r' F R)",
+        "image": "./Algorithms _ SolveTheCube_files/oll_25.webp",
+        "stickers": "xyyyyyyyxxxybbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-24",
+        "number": "24",
+        "title": "OLL 24",
+        "group": "Crosses",
+        "groupId": "oll-cross",
+        "alg": "r U R' U' r' F R F'",
+        "display": "(r U R' U') (r' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_24.webp",
+        "stickers": "xyyyyyxyyyxxbbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-22",
+        "number": "22",
+        "title": "OLL 22",
+        "group": "Crosses",
+        "groupId": "oll-cross",
+        "alg": "R U2 R2' U' R2 U' R2' U2 R",
+        "display": "R U2 (R2' U' R2 U') (R2' U2 R)",
+        "image": "./Algorithms _ SolveTheCube_files/oll_22.webp",
+        "stickers": "xyxyyyxyxxxybbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-21",
+        "number": "21",
+        "title": "OLL 21",
+        "group": "Crosses",
+        "groupId": "oll-cross",
+        "alg": "R U R' U R U' R' U R U2 R'",
+        "display": "(R U R') U (R U' R') U (R U2 R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_21.webp",
+        "stickers": "xyxyyyxyxxxxbbbbbbyxyrrrrrr"
+      },
+      {
+        "id": "oll-23",
+        "number": "23",
+        "title": "OLL 23",
+        "group": "Crosses",
+        "groupId": "oll-cross",
+        "alg": "R2 D R' U2 R D' R' U2 R'",
+        "display": "R2 D (R' U2 R) D' (R' U2 R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_23.webp",
+        "stickers": "yyyyyyxyxyxybbbbbbxxxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-dot",
+    "title": "Dots",
+    "cases": [
+      {
+        "id": "oll-1",
+        "number": "1",
+        "title": "OLL 1",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "R U2 R' R' F R F' U2 R' F R F'",
+        "display": "(R U2 R') (R' F R F') U2 (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_1.webp",
+        "stickers": "xxxxyxxxxxyxbbbbbbyyyrrrrrr"
+      },
+      {
+        "id": "oll-2",
+        "number": "2",
+        "title": "OLL 2",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "F R U R' U' F' f R U R' U' f'",
+        "display": "F (R U R' U') F' f (R U R' U') f'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_2.webp",
+        "stickers": "xxxxyxxxxxyybbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-4",
+        "number": "4",
+        "title": "OLL 4",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "f R U R' U' f' U F R U R' U' F'",
+        "display": "f (R U R' U') f' U F (R U R' U') F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_4.webp",
+        "stickers": "xxyxyxxxxyyxbbbbbbyyxrrrrrr"
+      },
+      {
+        "id": "oll-3",
+        "number": "3",
+        "title": "OLL 3",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "f R U R' U' f' U' F R U R' U' F'",
+        "display": "f (R U R' U') f' U' F (R U R' U') F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_3.webp",
+        "stickers": "xxxxyxxxyxyxbbbbbbxyyrrrrrr"
+      },
+      {
+        "id": "oll-19",
+        "number": "19",
+        "title": "OLL 19",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "M U R U R' U' M' R' F R F'",
+        "display": "M U (R U R' U') M' (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_19.webp",
+        "stickers": "yxyxyxxxxxyxbbbbbbyyxrrrrrr"
+      },
+      {
+        "id": "oll-18",
+        "number": "18",
+        "title": "OLL 18",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "F R U R' U y' R' U2 R' F R F'",
+        "display": "F (R U R' U) y' R' U2 (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_18.webp",
+        "stickers": "xxxxyxyxyxyxbbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-17",
+        "number": "17",
+        "title": "OLL 17",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "R U R' U R' F R F' U2 R' F R F'",
+        "display": "(R U R' U) (R' F R F') U2 (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_17.webp",
+        "stickers": "yxxxyxxxyxyxbbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-20",
+        "number": "20",
+        "title": "OLL 20",
+        "group": "Dots",
+        "groupId": "oll-dot",
+        "alg": "M U R U R' U' M2 U R U' r'",
+        "display": "M U (R U R' U') M2 (U R U' r')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_20.webp",
+        "stickers": "yxyxyxyxyxyxbbbbbbxyxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-corners",
+    "title": "All Corners",
+    "cases": [
+      {
+        "id": "oll-57",
+        "number": "57",
+        "title": "OLL 57",
+        "group": "All Corners",
+        "groupId": "oll-corners",
+        "alg": "R U R' U' M' U R U' r'",
+        "display": "(R U R' U') M' (U R U' r')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_57.webp",
+        "stickers": "yxyyyyyxyxyxbbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-28",
+        "number": "28",
+        "title": "OLL 28",
+        "group": "All Corners",
+        "groupId": "oll-corners",
+        "alg": "M' U' M U2' M' U' M",
+        "display": "M' U' M U2' M' U' M",
+        "image": "./Algorithms _ SolveTheCube_files/oll_28.webp",
+        "stickers": "yxyyyxyyyxxxbbbbbbxyxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-line",
+    "title": "Lines",
+    "cases": [
+      {
+        "id": "oll-55",
+        "number": "55",
+        "title": "OLL 55",
+        "group": "Lines",
+        "groupId": "oll-line",
+        "alg": "R U2 R2 U' R U' R' U2 F R F'",
+        "display": "R U2 R2 (U' R U' R') U2 (F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_55.webp",
+        "stickers": "xyxxyxxyxxxxbbbbbbyyyrrrrrr"
+      },
+      {
+        "id": "oll-52",
+        "number": "52",
+        "title": "OLL 52",
+        "group": "Lines",
+        "groupId": "oll-line",
+        "alg": "R U R' U R d' R U' R' F'",
+        "display": "(R U R' U) R d' R U' R' F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_52.webp",
+        "stickers": "xyxxyxxyxyxxbbbbbbyyyrrrrrr"
+      },
+      {
+        "id": "oll-51",
+        "number": "51",
+        "title": "OLL 51",
+        "group": "Lines",
+        "groupId": "oll-line",
+        "alg": "f R U R' U' R U R' U' f'",
+        "display": "f (R U R' U') (R U R' U') f'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_51.webp",
+        "stickers": "xxxyyyxxxxyybbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-56",
+        "number": "56",
+        "title": "OLL 56",
+        "group": "Lines",
+        "groupId": "oll-line",
+        "alg": "F R U R' U' R F' r U R' U' r'",
+        "display": "F (R U R' U') R F' (r U R' U') r'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_56.webp",
+        "stickers": "xxxyyyxxxxyxbbbbbbyxyrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-t",
+    "title": "Ts",
+    "cases": [
+      {
+        "id": "oll-45",
+        "number": "45",
+        "title": "OLL 45",
+        "group": "Ts",
+        "groupId": "oll-t",
+        "alg": "F R U R' U' F'",
+        "display": "F (R U R' U') F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_45.webp",
+        "stickers": "xxyyyyxxyxyxbbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-33",
+        "number": "33",
+        "title": "OLL 33",
+        "group": "Ts",
+        "groupId": "oll-t",
+        "alg": "R U R' U' R' F R F'",
+        "display": "(R U R' U') (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_33.webp",
+        "stickers": "xxyyyyxxyyyxbbbbbbxxxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-z",
+    "title": "Zs",
+    "cases": [
+      {
+        "id": "oll-40",
+        "number": "40",
+        "title": "OLL 40",
+        "group": "Zs",
+        "groupId": "oll-z",
+        "alg": "R' F R U R' U' F' U R",
+        "display": "R' F (R U R' U') F' U R",
+        "image": "./Algorithms _ SolveTheCube_files/oll_40.webp",
+        "stickers": "yxxyyyxxyxyxbbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-39",
+        "number": "39",
+        "title": "OLL 39",
+        "group": "Zs",
+        "groupId": "oll-z",
+        "alg": "L F' L' U' L U F U' L'",
+        "display": "L F' (L' U' L U) F U' L'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_39.webp",
+        "stickers": "xxyyyyyxxxyxbbbbbbyxxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-L",
+    "title": "Big Ls",
+    "cases": [
+      {
+        "id": "oll-14",
+        "number": "14",
+        "title": "OLL 14",
+        "group": "Big Ls",
+        "groupId": "oll-L",
+        "alg": "R' F R U R' F' R y' R U' R'",
+        "display": "(R' F R) U (R' F' R) y' (R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_14.webp",
+        "stickers": "xxxyyyxxyyyxbbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-13",
+        "number": "13",
+        "title": "OLL 13",
+        "group": "Big Ls",
+        "groupId": "oll-L",
+        "alg": "F U R U' R2 F' R U R U' R'",
+        "display": "F (U R U' R2) F' (R U R U' R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_13.webp",
+        "stickers": "xxxyyyyxxxyybbbbbbxxyrrrrrr"
+      },
+      {
+        "id": "oll-16",
+        "number": "16",
+        "title": "OLL 16",
+        "group": "Big Ls",
+        "groupId": "oll-L",
+        "alg": "r U r' R U R' U' r U' r'",
+        "display": "r U r' (R U R' U') r U' r'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_16.webp",
+        "stickers": "xxyyyyxxxyyxbbbbbbyxxrrrrrr"
+      },
+      {
+        "id": "oll-15",
+        "number": "15",
+        "title": "OLL 15",
+        "group": "Big Ls",
+        "groupId": "oll-L",
+        "alg": "l' U' l L' U' L U l' U l",
+        "display": "l' U' l (L' U' L U) l' U l",
+        "image": "./Algorithms _ SolveTheCube_files/oll_15.webp",
+        "stickers": "yxxyyyxxxxyybbbbbbxxyrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-c",
+    "title": "Cs",
+    "cases": [
+      {
+        "id": "oll-46",
+        "number": "46",
+        "title": "OLL 46",
+        "group": "Cs",
+        "groupId": "oll-c",
+        "alg": "R' U' R' F R F' U R",
+        "display": "R' U' (R' F R F') U R",
+        "image": "./Algorithms _ SolveTheCube_files/oll_46.webp",
+        "stickers": "yyxxyxyyxxxxbbbbbbyyyrrrrrr"
+      },
+      {
+        "id": "oll-34",
+        "number": "34",
+        "title": "OLL 34",
+        "group": "Cs",
+        "groupId": "oll-c",
+        "alg": "R U R' U' x D' R' U R U' D x'",
+        "display": "(R U R' U') x D' R' U R U' D x'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_34.webp",
+        "stickers": "xxxyyyyxyxyxbbbbbbxxyrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-w",
+    "title": "Ws",
+    "cases": [
+      {
+        "id": "oll-38",
+        "number": "38",
+        "title": "OLL 38",
+        "group": "Ws",
+        "groupId": "oll-w",
+        "alg": "R U R' U R U' R' U' R' F R F'",
+        "display": "(R U R' U) (R U' R' U') (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_38.webp",
+        "stickers": "xyyyyxyxxxyxbbbbbbyyxrrrrrr"
+      },
+      {
+        "id": "oll-36",
+        "number": "36",
+        "title": "OLL 36",
+        "group": "Ws",
+        "groupId": "oll-w",
+        "alg": "L' U' L U' L' U L U L F' L' F",
+        "display": "(L' U' L U') (L' U L U) (L F' L' F)",
+        "image": "./Algorithms _ SolveTheCube_files/oll_36.webp",
+        "stickers": "yyxxyyxxyxyxbbbbbbxxxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-p",
+    "title": "Ps",
+    "cases": [
+      {
+        "id": "oll-44",
+        "number": "44",
+        "title": "OLL 44",
+        "group": "Ps",
+        "groupId": "oll-p",
+        "alg": "f R U R' U' f'",
+        "display": "f (R U R' U') f'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_44.webp",
+        "stickers": "xxyxyyxyyxxxbbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-43",
+        "number": "43",
+        "title": "OLL 43",
+        "group": "Ps",
+        "groupId": "oll-p",
+        "alg": "f' L' U' L U f",
+        "display": "f' (L' U' L U) f",
+        "image": "./Algorithms _ SolveTheCube_files/oll_43.webp",
+        "stickers": "yxxyyxyyxxxxbbbbbbyyyrrrrrr"
+      },
+      {
+        "id": "oll-31",
+        "number": "31",
+        "title": "OLL 31",
+        "group": "Ps",
+        "groupId": "oll-p",
+        "alg": "R' U' F U R U' R' F' R",
+        "display": "R' U' F U R U' R' F' R",
+        "image": "./Algorithms _ SolveTheCube_files/oll_31.webp",
+        "stickers": "xyyxyyxxyyyxbbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-32",
+        "number": "32",
+        "title": "OLL 32",
+        "group": "Ps",
+        "groupId": "oll-p",
+        "alg": "F U R U' F' r U R' U' r'",
+        "display": "F U R U' F' r U R' U' r'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_32.webp",
+        "stickers": "yyxyyxyxxxyybbbbbbxyxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-square",
+    "title": "Squares",
+    "cases": [
+      {
+        "id": "oll-35",
+        "number": "35",
+        "title": "OLL 35",
+        "group": "Squares",
+        "groupId": "oll-square",
+        "alg": "R U2 R' R' F R F' R U2 R'",
+        "display": "(R U2 R') (R' F R F') (R U2 R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_35.webp",
+        "stickers": "yxxxyyxyyyxxbbbbbbxxyrrrrrr"
+      },
+      {
+        "id": "oll-37",
+        "number": "37",
+        "title": "OLL 37",
+        "group": "Squares",
+        "groupId": "oll-square",
+        "alg": "F R' F' R U R U' R'",
+        "display": "F R' F' R U R U' R'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_37.webp",
+        "stickers": "yyxyyxxxyyyxbbbbbbxyyrrrrrr"
+      },
+      {
+        "id": "oll-5",
+        "number": "5",
+        "title": "OLL 5",
+        "group": "Squares",
+        "groupId": "oll-square",
+        "alg": "r' U2 R U R' U r",
+        "display": "r' U2 (R U R' U) r",
+        "image": "./Algorithms _ SolveTheCube_files/oll_5.webp",
+        "stickers": "xxxxyyxyyxxxbbbbbbxxyrrrrrr"
+      },
+      {
+        "id": "oll-6",
+        "number": "6",
+        "title": "OLL 6",
+        "group": "Squares",
+        "groupId": "oll-square",
+        "alg": "r U2 R' U' R U' r'",
+        "display": "r U2 R' U' R U' r'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_6.webp",
+        "stickers": "xyyxyyxxxyyxbbbbbbyxxrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-l",
+    "title": "Little Ls",
+    "cases": [
+      {
+        "id": "oll-48",
+        "number": "48",
+        "title": "OLL 48",
+        "group": "Little Ls",
+        "groupId": "oll-l",
+        "alg": "F R U R' U' R U R' U' F'",
+        "display": "F (R U R' U') (R U R' U') F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_48.webp",
+        "stickers": "xyxyyxxxxxyybbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-47",
+        "number": "47",
+        "title": "OLL 47",
+        "group": "Little Ls",
+        "groupId": "oll-l",
+        "alg": "F' L' U' L U L' U' L U F",
+        "display": "F' (L' U' L U) (L' U' L U) F",
+        "image": "./Algorithms _ SolveTheCube_files/oll_47.webp",
+        "stickers": "xyxxyyxxxyyxbbbbbbyxyrrrrrr"
+      },
+      {
+        "id": "oll-50",
+        "number": "50",
+        "title": "OLL 50",
+        "group": "Little Ls",
+        "groupId": "oll-l",
+        "alg": "R' F R2 B' R2' F' R2 B R'",
+        "display": "R' F R2 B' R2' F' R2 B R'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_50.webp",
+        "stickers": "xyxyyxxxxyyxbbbbbbyyyrrrrrr"
+      },
+      {
+        "id": "oll-49",
+        "number": "49",
+        "title": "OLL 49",
+        "group": "Little Ls",
+        "groupId": "oll-l",
+        "alg": "R' F R' F' R2 U2 y R' F R F'",
+        "display": "(R' F R' F') R2 U2 y (R' F R F')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_49.webp",
+        "stickers": "xyxxyyxxxxyybbbbbbxxxrrrrrr"
+      },
+      {
+        "id": "oll-53",
+        "number": "53",
+        "title": "OLL 53",
+        "group": "Little Ls",
+        "groupId": "oll-l",
+        "alg": "l' U' L U' L' U L U' L' U2 l",
+        "display": "(l' U' L U') (L' U L U') L' U2 l",
+        "image": "./Algorithms _ SolveTheCube_files/oll_53.webp",
+        "stickers": "xyxyyxxxxxyxbbbbbbyyyrrrrrr"
+      },
+      {
+        "id": "oll-54",
+        "number": "54",
+        "title": "OLL 54",
+        "group": "Little Ls",
+        "groupId": "oll-l",
+        "alg": "r U R' U R U' R' U R U2' r'",
+        "display": "(r U R' U) (R U' R' U) R U2' r'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_54.webp",
+        "stickers": "xyxxyyxxxxyxbbbbbbyxyrrrrrr"
+      }
+    ]
+  },
+  {
+    "id": "oll-others",
+    "title": "Other shapes",
+    "cases": [
+      {
+        "id": "oll-11",
+        "number": "11",
+        "title": "OLL 11",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "F' L' U' L U F y F R U R' U' F'",
+        "display": "F' (L' U' L U) F y F (R U R' U') F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_11.webp",
+        "stickers": "yxxyyxxyxxxybbbbbbxyyrrrrrr"
+      },
+      {
+        "id": "oll-12",
+        "number": "12",
+        "title": "OLL 12",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "F R U R' U' F' U F R U R' U' F'",
+        "display": "F (R U R' U') F' U F (R U R' U') F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_12.webp",
+        "stickers": "xxyxyyxyxyxxbbbbbbyxxrrrrrr"
+      },
+      {
+        "id": "oll-7",
+        "number": "7",
+        "title": "OLL 7",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "r U R' U R U2 r'",
+        "display": "(r U R' U) R U2 r'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_7.webp",
+        "stickers": "xyxyyxyxxxyybbbbbbxyyrrrrrr"
+      },
+      {
+        "id": "oll-8",
+        "number": "8",
+        "title": "OLL 8",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "r' U' R U' R' U2 r",
+        "display": "r' U' R U' R' U2 r",
+        "image": "./Algorithms _ SolveTheCube_files/oll_8.webp",
+        "stickers": "yxxyyxxyxyxxbbbbbbyyxrrrrrr"
+      },
+      {
+        "id": "oll-10",
+        "number": "10",
+        "title": "OLL 10",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "R U R' U R' F R F' R U2 R'",
+        "display": "(R U R' U) (R' F R F') R U2 R'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_10.webp",
+        "stickers": "xxyyyxxyxxxybbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-9",
+        "number": "9",
+        "title": "OLL 9",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "R U R' U' R' F R2 U R' U' F'",
+        "display": "(R U R' U') R' F R2 U R' U' F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_9.webp",
+        "stickers": "xyxyyxxxyyyxbbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-29",
+        "number": "29",
+        "title": "OLL 29",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "R U R' U' R U' R' F' U' F R U R'",
+        "display": "(R U R' U') R U' R' F' U' (F R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_29.webp",
+        "stickers": "xyyyyxxxyyyxbbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-42",
+        "number": "42",
+        "title": "OLL 42",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "R' F R F' R' F R F' R U R' U' R U R'",
+        "display": "(R' F R F') (R' F R F') (R U R' U') (R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_42.webp",
+        "stickers": "xyyyyxxxyxyxbbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-41",
+        "number": "41",
+        "title": "OLL 41",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "R U R' U R U2 R' F R U R' U' F'",
+        "display": "(R U R' U) R U2 R' F (R U R' U') F'",
+        "image": "./Algorithms _ SolveTheCube_files/oll_41.webp",
+        "stickers": "xyxyyxyxyxyxbbbbbbxyxrrrrrr"
+      },
+      {
+        "id": "oll-30",
+        "number": "30",
+        "title": "OLL 30",
+        "group": "Other shapes",
+        "groupId": "oll-others",
+        "alg": "L F' L' F L' U2 L d R U R'",
+        "display": "(L F' L' F) L' U2 L d (R U R')",
+        "image": "./Algorithms _ SolveTheCube_files/oll_30.webp",
+        "stickers": "xyxyyxyxyxyxbbbbbbxyyrrrrrr"
+      }
+    ]
+  }
+]
