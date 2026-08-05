@@ -1,5 +1,7 @@
 # SolveTheCube · Speedcubing Trainer
 
+link: https://rubikalgo.vercel.app/
+
 A dark-themed SPA for learning F2L / OLL / PLL and generating WCA scrambles.
 React + Vite + Tailwind, with `cubing.js` driving the one interactive 3D cube.
 
